@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Usage: insert-window <src> <dest>
+set -e
+
+src="$1"
+dest="$2"
+tmp=999
+
+tmux move-window -s "$src" -t "$tmp" \; move-window -s "$tmp" -t "$dest"
